@@ -29,4 +29,14 @@ class ParkingLot
 
     nil
   end
+
+  def get_slot_num_by_reg_no(reg_no)
+    slots.each_with_index do |slot, idx|
+      next unless slot
+
+      return (idx + 1).to_s if slot.reg_no == reg_no
+    end
+
+    nil
+  end
 end
