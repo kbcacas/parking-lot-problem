@@ -1,7 +1,15 @@
 class ParkingLot
-  attr_accessor :slots
+  attr_reader :slots
   def initialize(size)
     @slots = Array.new(size)
+  end
+
+  def available_slot
+    slots.each_with_index do |slot, idx|
+      return idx if slot.nil?
+    end
+
+    nil
   end
 
   def park(car:, slot_num:)
@@ -22,13 +30,6 @@ class ParkingLot
     result
   end
 
-  def available_slot
-    slots.each_with_index do |slot, idx|
-      return idx if slot.nil?
-    end
-
-    nil
-  end
 
   def get_slot_num_by_reg_no(reg_no)
     slots.each_with_index do |slot, idx|

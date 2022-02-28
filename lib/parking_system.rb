@@ -7,7 +7,7 @@ class ParkingSystem
     @command_to_func_hash = {
       create_parking_lot: method(:create_parking_lot),
       leave: method(:leave_process),
-      registration_numbers_for_cars_with_colour: method(:registration_numbers_by_color),
+      plate_numbers_for_cars_with_colour: method(:registration_numbers_by_color),
       slot_numbers_for_cars_with_colour: method(:slot_numbers_by_color),
       slot_number_for_registration_number: method(:slot_num_by_registration_number)
     }
