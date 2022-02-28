@@ -5,7 +5,7 @@ class ParkingLot
   end
 
   def park(car:, slot_num:)
-    slots[slot_num] = car
+    slots[slot_num] = car 
   end
 
   def leave(slot_num)
@@ -20,5 +20,13 @@ class ParkingLot
     end
 
     result
+  end
+
+  def available_slot
+    slots.each_with_index do |slot, idx|
+      return idx if slot.nil?
+    end
+
+    nil
   end
 end
