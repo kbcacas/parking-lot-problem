@@ -39,4 +39,15 @@ class ParkingLot
 
     nil
   end
+
+  def get_slot_num_by_color(color)
+    result = []
+    slots.each_with_index do |slot, idx|
+      next unless slot
+
+      result << (idx + 1).to_s if slot.color == color
+    end
+
+    result
+  end
 end
